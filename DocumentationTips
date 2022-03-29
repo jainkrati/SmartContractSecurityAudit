@@ -1,0 +1,22 @@
+
+
+1. Add @title before every contract definition for its documentation
+2. Use @dev instead of @notice for functions 
+3, Add @return for function value documentation
+4. Add @param for each param in the functions
+5. At every function level, also add "who can call this function"
+
+Ref:
+https://consensys.github.io/smart-contract-best-practices/development-recommendations/documentation/general/
+
+5. Add Specs, diagrams, state machines, models
+6. Doc for 
+	a. Compiler version, flags used, and steps for verifying the deployed bytecode matches the source code
+	b. Compiler versions and flags that will be used for the different phases of rollout.
+	c. Current status of deployed code (including outstanding issues, performance stats, etc.)
+	d. Action Plan for handling case when a bug is discovered/reported, mitigation plan if things go wrong, how money will be distributed, disclosure policy, recourse of failure. Need help from Abhilash Ihere
+	e. Known issues, limitations, conflicts of interest
+	f. History doc for testing and code reviewers + feedback
+	g. Who to contact for issues and chat room where questions can be asked. 
+Ref:
+https://consensys.github.io/smart-contract-best-practices/development-recommendations/documentation/specification/
