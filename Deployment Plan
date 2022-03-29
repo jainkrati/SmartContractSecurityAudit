@@ -1,0 +1,22 @@
+Security Tool Run:
+
+Before deploying smart contract to test net, let's run Mythril, Slither, Madmax, Echidna, Securify2 on our contracts once for static and dynamic analysis of any security vulnerabilities that skipped from the review.
+
+Ref : https://consensys.github.io/smart-contract-best-practices/security-tools/static-and-dynamic-analysis/ 
+
+Tools:
+https://github.com/ConsenSys/mythril
+https://github.com/crytic/slither
+https://github.com/nevillegrech/MadMax
+https://github.com/crytic/echidna
+https://github.com/eth-sri/securify2
+
+
+Deployment Plan:
+
+1. 100% test coverage and run security tools mentioned above.
+2. Fix vulnerabilities from #1 and deploy on our own testnet and test internally to break the contract
+3. Deploy on the public testnet with substantial testing and bug bounties for 10 days
+4. Deploy on the mainnet in beta, with limits to the amount that can be transacted
+
+Ref : https://consensys.github.io/smart-contract-best-practices/development-recommendations/precautions/deployment/
