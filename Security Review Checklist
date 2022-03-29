@@ -1,0 +1,24 @@
+Checklist while doing smart contract security review:
+
+
+1. Add Circuit Breaker logic to pause each contract when needed or in case of failures/ attacks. Ref: https://consensys.github.io/smart-contract-best-practices/development-recommendations/precautions/circuit-breakers/
+
+2. Add Upgradeability of dependency contracts. This is needed to ensure we can push bug fixes through upgradeable contracts.
+Ref: https://consensys.github.io/smart-contract-best-practices/development-recommendations/precautions/upgradeability/
+
+3. Lock pragma in each contract file to use. Example "pragma solidity 0.8.10; " instead of "pragma solidity ^0.8.10;" 
+Ref: https://consensys.github.io/smart-contract-best-practices/development-recommendations/solidity-specific/locking-pragmas/ 
+
+4. Use Interface Types instead of addresses. 
+Ref: https://consensys.github.io/smart-contract-best-practices/development-recommendations/solidity-specific/interface-types/
+
+5.Use call() instead of transferFrom() to avoid forwarding 2300 gas to the recipient. Ref: https://consensys.net/blog/developers/ethereum-smart-contract-security-recommendations/
+
+6. Handle errors if using call() and other low level functions : https://docs.soliditylang.org/en/develop/security-considerations.html?highlight=check%20effects#call-stack-depth
+
+7. Use modifier ifOwner for removing duplicate require checks for sender == owner. Create other modifiers as needed.
+8. Add require check for integer variables controlling for loops; they need to be less than a fixed number to prevent running out from gas due to the for loop at line 143.REf: https://docs.soliditylang.org/en/develop/security-considerations.html?highlight=check%20effects#gas-limit-and-loops
+
+9. Add Integer overflow checks whenever incrementing.
+
+
